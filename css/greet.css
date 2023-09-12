@@ -1,0 +1,43 @@
+.greet_section p {
+  margin: 20px 0;
+  text-align: center;
+  line-height: 180%;
+}
+
+.greet_section figure {
+  margin: 0 auto;
+  width: 850px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.greet_section figure div {
+  overflow: hidden;
+  width: 49%;
+  box-sizing: border-box;
+  border: 5px solid var(--main-color);
+  box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+}
+
+.greet_section figure div img {
+  width: 100%;
+}
+
+/* motion */
+.greet_section>* {
+  opacity: 0;
+  transition: all 1s;
+}
+
+.greet_section>*:nth-child(odd) {
+  transform: translateX(-200px);
+}
+
+.greet_section>*:nth-child(even) {
+  transform: translateX(200px);
+}
+
+.greet_section>*.active {
+  transform: translateX(0);
+  opacity: 1;
+}

@@ -1,0 +1,42 @@
+/* 초기화 세팅 */
+* {
+  margin: 0;
+  padding: 0;
+  /* inherit : 부모가 주는대로, 상속됨 */
+  font-family: inherit;
+  color:inherit;
+  font-size: inherit; 
+  font-style: inherit;
+  text-decoration: inherit;
+  font-weight: inherit;
+}
+
+body{
+  font-size: 1em ;
+}
+
+li {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+input,
+select,
+textarea {
+  box-sizing: border-box;
+}
+
+button{
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+
+img, iframe, video, svg, canvas{ /* inline 레벨이라 밑에 여백이 생김, block 레벨로 바꿔줌 */
+  display: block;
+}
+

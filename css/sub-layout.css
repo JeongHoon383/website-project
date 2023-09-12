@@ -1,0 +1,205 @@
+section.sub_visual {
+  position: relative;
+  min-width: 1200px;
+  height: 300px;
+  background: black;
+}
+
+section.sub_visual video {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+  /* 아이폰, 맥에서 커서가 감지가 돼서 클릭하면 동영상이 커짐 그래서 기능 꺼줘야됨
+  그리고 none을 해주면 텍스트 드래그가 가능함*/
+  mix-blend-mode: screen;
+}
+
+section.sub_visual figure {
+  /* inherit은 부모가 padding일때 사용하면 안됨 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+}
+
+section.sub_visual figure img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(.85);
+}
+
+section.sub_visual figure figcaption {
+  position: relative;
+  /* 마지막 포지션이 가장 위로 올라옴 z-index */
+  text-align: center;
+  color: #FFF;
+}
+
+section.sub_visual figure figcaption h5 {
+  margin-bottom: 10px;
+  font-size: 3em;
+  font-weight: 900;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, .5);
+  /* shadow 가독성을 높이기 위해 씀 */
+}
+
+section.sub_visual figure figcaption p {
+  font-size: 1.2em;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+/* sub_visual motion 수정관리를 위해 motion 부분은 따로 만들어야됨
+    수정시 이부분만 주석처리 할것*/
+section.sub_visual figure {
+  display: none;
+  overflow: hidden;
+  /* 바깥으로 삐져나오지 않게 숨김, scale과 같이 쓸것 */
+}
+
+section.sub_visual figure img {
+  transform: scale(1.2);
+  /* 이미지 키움 1.2배 */
+  transition: transform 10s linear, filter 2s linear;
+  filter: brightness(.5) blur(3px);
+}
+
+section.sub_visual figure.active img {
+  transform: scale(1);
+  /* 커진 상태에서 원래 크기(100%)로 돌아옴 */
+  filter: brightness(.9) blur(0px);
+}
+
+section.sub_visual figure figcaption h5,
+section.sub_visual figure figcaption p {
+  opacity: 0;
+  transition: all 2.5s;
+  transition-delay: 1s;
+}
+
+section.sub_visual figure figcaption h5 {
+  transform: translateY(-50px);
+}
+
+section.sub_visual figure figcaption p {
+  transform: translateY(50px);
+}
+
+section.sub_visual figure.active figcaption h5,
+section.sub_visual figure.active figcaption p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sub_center {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 1200px;
+  margin: 30px auto;
+}
+
+aside.sidebar {
+  position: sticky;
+  top: 120px;
+  width: 215px;
+  min-height: 400px;
+}
+
+.side_banner {
+  width: 100%;
+  margin-top: 100px;
+}
+
+.snb>ul>li {
+  display: none;
+}
+
+.snb>ul>li>a {
+  display: none;
+}
+
+.snb>ul>li>h6 {
+  margin-bottom: 10px;
+  font-size: 1.3em;
+  font-weight: 900;
+  color: var(--main-color);
+}
+
+.snb>ul>li>ul>li>a {
+  display: block;
+  padding: 7px 5px;
+  font-weight: 600;
+  border-bottom: 1px dotted #CCC;
+}
+
+.snb>ul>li>ul>li>a:hover {
+  color: var(--main-color);
+}
+
+.snb>ul>li>ul>li>a.active {
+  color: var(--point-color);
+}
+
+.snb>ul>li>ul>li>a::before {
+  content: '- ';
+}
+
+main.sub_content {
+  position: relative;
+  overflow: hidden;
+  width: 940px;
+}
+
+main.sub_content ul.breadcrumb {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  font-size: 0.9em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+main.sub_content ul.breadcrumb li:not(:last-child)::after {
+  content: ">";
+  margin: 0 3px;
+}
+
+main.sub_content ul.breadcrumb li:last-child {
+  color: var(--point-color);
+}
+
+.sub_title {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  font-size: 1.5em;
+  font-weight: 900;
+  border-bottom: 1px solid #CCC;
+}
+
+.emphasis {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.point {
+  color: var(--point-color);
+}
+
+.sub_summary {
+  margin-bottom: 40px;
+}
+
+.sub_summary p {
+  margin-bottom: 5px;
+}

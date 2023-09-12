@@ -1,0 +1,50 @@
+.board table{
+  width: 100%;
+  text-align: center;
+  border-top: 2px solid #611111;
+}
+
+.board table th{
+  background: var(--dark-color);
+  color: #FFF;
+}
+
+.board table tr:nth-child(even){
+  background: #EEE;
+}
+
+.board table th,
+.board table td{
+  padding: 10px;
+  border-bottom: 1px solid #CCC;
+  box-sizing: border-box;
+}
+
+.board table td:nth-child(1),
+.board table td:nth-child(5){
+  width: 70px;
+}
+
+.board table td:nth-child(2){
+  text-align: left;
+  width: 50%;
+}
+
+.board form{
+  margin-top: 30px;
+  text-align: center;
+}
+
+.board form *{
+  height: 30px;
+  padding: 0 10px;
+}
+
+.board form button{
+  background: black;
+  color: #FFF;
+}
+
+.board form button:hover{
+  background: var(--point-color);
+}

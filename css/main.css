@@ -1,0 +1,22 @@
+
+body{
+  font-family: 'Montserrat', 'Noto Sans KR', sans-serif; /* 영어는 montserrat, 한글은 나눔고딕 순서 바꾸면 안됨 */
+  color:#555;
+  font-size: 14px; 
+  font-style: normal;
+  text-decoration: none;
+  font-weight:normal;
+}
+
+.serif{
+  font-family: 'Nanum Myeongjo', serif;
+}
+
+:root{ /* html이라는 뜻 */
+  
+  --main-color:#a99783; /* 변수를 만들어줌 */
+  --sub-color:#9a774f;
+  --point-color:#ff8800;
+  --dark-color:#181616;
+}
+
